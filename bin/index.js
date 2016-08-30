@@ -7,7 +7,7 @@ program.command('init')
     .option('-f,--ftl', 'init a project with freemarkers')
     .option('--hbs', 'init a project with handerbars')
     .action(function (program) {
-        if (program.freemarkers) {
+        if (program.hbs) {
             console.log('init-------------------'.blue);
             console.log('template:handerbars'.blue);
             template.hbs();
