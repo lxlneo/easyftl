@@ -1,15 +1,20 @@
-var  program = require('commander');
-var  initProject = require('../lib/initProject.js');
+var program = require('commander');
+var colors = require('colors');
 
-program.version('0.0.1')
-    .option("-f,--full",'show a full program')
-    .option("-F,--fuck",'what a fuck man')
-    .parse(process.argv);
+var template = require('../lib/template.js')
 
-if(program.full){
-    console.log("this is a full....");
-    initProject.full();
-}
-if(program.fuck){
-    console.log("this is a fuck....");
-}
+program.command('init')
+    .option('-f,--ftl', 'init a project with freemarkers')
+    .option('--hbs', 'init a project with handerbars')
+    .action(function (program) {
+        if (program.freemarkers) {
+            console.log('init-------------------'.blue);
+            console.log('template:handerbars'.blue);
+            template.hbs();
+        } else {
+            console.log('init-------------------'.blue);
+            console.log('template:freemarkers'.blue);
+            template.ftl();
+        }
+
+    })

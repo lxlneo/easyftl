@@ -1,6 +1,6 @@
 {
   "name": "easy-fe",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "help fe develope",
   "main": "./bin/index.js",
   "scripts": {
@@ -13,7 +13,10 @@
   },
   "bugs": {
     "url": "https://github.com/lxlneo/easyftl/issues"
-  }, 
+  },
+  "bin":{
+    "easyfe":"./bin/index.js"
+  },
   "dependencies": {
     "async": "^0.8.0",
     "cheerio": "^0.15.0",
